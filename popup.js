@@ -1,4 +1,6 @@
 'use strict'
+$(function() {
+
   $('.row').on('click', function() {
 
    // Clicking on the parent row will toggle the child check box
@@ -12,3 +14,4 @@
   else
     $(this).removeClass('selected');
   });
+});

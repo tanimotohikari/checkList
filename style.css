@@ -1,8 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
-.content {
-  width: 500px;
-}
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -19,14 +16,17 @@ body {
 }
 
 .row {
+  width: 200px;
   background: #fff;
   padding: 20px;
   position: relative;
   margin: 0 0 1px 0;
 }
+
 .row:hover {
   cursor: pointer;
 }
+
 .row.selected {
   background: #f3f3f3;
 }
@@ -34,6 +34,7 @@ body {
 label {
   cursor: pointer;
 }
+
 label:before {
   display: inline-block;
   content: "+";
