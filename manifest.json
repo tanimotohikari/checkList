@@ -1,12 +1,15 @@
 {
   "manifest_version": 2,
-  "version": "0.1",
-  "name": "check flow",
-  "short_name": "terumit",
+  "version": "0.5",
+  "name": "check list",
+  "short_name": "checkList",
   "description": "フロント制作フローチェックリスト",
   "browser_action": {
     "default_title": "terumit",
     "default_popup": "popup.html"
+  },
+  "icons" : {
+     "128": "icon.png"
   },
   "content_scripts":[
     {
@@ -19,8 +22,6 @@
   ],
   "permissions": [
     "activeTab",
-    "*://*/*/",
-    "webRequest",
-    "tabs"
+    "webRequest"
   ]
 }
