@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
   background: #e0e0e0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 16px;
@@ -15,50 +15,61 @@ body {
   text-transform: uppercase;
 }
 
-.row {
-  width: 200px;
-  background: #fff;
-  padding: 20px;
-  position: relative;
-  margin: 0 0 1px 0;
-}
-
-.row:hover {
-  cursor: pointer;
-}
-
-.row.selected {
-  background: #f3f3f3;
-}
-
 label {
   cursor: pointer;
 }
 
 label:before {
   display: inline-block;
-  content: "+";
+  content: '';
   margin: 0 10px 0 0;
-  width: 35px;
-  height: 35px;
-  border: 3px solid #f95e5e;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #2f26264d;
   border-radius: 100%;
   vertical-align: middle;
-  color: #f95e5e;
-  font-size: 30px;
-  text-align: center;
-  font-weight: 700;
-  line-height: 0.9em;
-  transition: transform 0.2s ease-in-out;
+  color: #2f26264d;
+  font-size: 27px;
+  line-height: .7em;
+  transform: rotate(135deg);
+  transition: transform .2s ease-in-out;
 }
 
 input[type=checkbox]:checked + label:before {
-  background: #f95e5e;
-  color: #fff;
-  transform: rotate(135deg);
-  transform-origin: center center;
+  display: inline-block;
+  content: '';
+  margin: 0 10px 0 0;
+  background-color: #439afb;
+  border: 3px solid #3d8ce4;
+  border-radius: 100%;
+  vertical-align: middle;
+  color: #2f26264d;
+  font-size: 27px;
+  line-height: 0.7em;
+  transform: scale(.6, .6);
+  transition: transform .2s ease-in-out;
 }
 
 input[type=checkbox] {
   visibility: hidden;
+  width: 0;
+}
+
+.check-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.check-list li {
+  width: 350px;
+  background: #fff;
+  padding: 5px;
+  position: relative;
+  margin: 0 0 1px 0;
+}
+
+.check-list li:hover {
+  cursor: pointer;
+  opacity: .9;
 }
