@@ -2,16 +2,19 @@
 $(function() {
 
   $('.row').on('click', function() {
-
-   // Clicking on the parent row will toggle the child check box
    $('input[type=checkbox]', this).prop('checked', function(i, checked){
+      console.log(i);
       return !checked
    })
 
-  // Add selected class when box is checked
+  // チェックされた時のstyleを付与する
   if($('input[type=checkbox]', this).prop('checked'))
     $(this).addClass('selected');
   else
     $(this).removeClass('selected');
   });
+
+  // listの数
+  console.log($('.check-list > li').length);
+
 });
