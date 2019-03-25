@@ -10,84 +10,87 @@
   <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-  <button id="Save">Save</button>
-  <textarea id="text"></textarea>
-  <div class='tab'>
-    <p class='tab-title'>VWO設定チェックリスト</p>
-    <ul class='check-list'>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox'>対象ページにVWOタグが入っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>対象URLは合っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>対象URLの設定はURL一致、含む、前方一致等正しい測定ができるような設定になっているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>デバイスのセグメントは設定されているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>新規ユーザーのみ対象になっているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>クエリパラメータを指定するABの場合、セグメント別設定のところで設定しているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>バリエーションの変更部分に不要なものが紛れていないか（JavaScript、CSS）</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>バリエーションの名前は変更されているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>ゴールの設定は正しいか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>ゴールの設定に入れたURLのページにVWOタグは入っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>スケジューリングの設定は正しくされているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>ラベルは付いているか（後から検索するのに便利なので確認）</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>プレビューで実際のページを確認</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>出現確率が新規100%のままになっていないか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
-      </li>
-      <li class='row'>
-        <input type='checkbox' name='checkbox'/>
-        <label for='checkbox2'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
-      </li>
-    </ul>
+  <div class='heading'>
+    <img class='heading-icon' src='icon.png' alt=''>
+    <p>VWO Check list</p>
+    <div class='heading-count'>
+      <span id='js-check-count' class='heading-count-check'>12</span>/
+      <span id='js-list-count' class='heading-count-item'></span>
+    </div>
   </div>
+  <ul class='check-list'>
+    <li class='check-list-item'>
+      <label for='checkbox'>対象ページにVWOタグが入っているか</label>
+      <input id='checkbox' type='checkbox' name='checkbox'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox2'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
+      <input id='checkbox2' type='checkbox' name='checkbox2'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox3'>対象URLは合っているか</label>
+      <input id='checkbox3' type='checkbox' name='checkbox3'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox4'>対象URLの設定はURL一致、含む、前方一致等正しい測定ができるような設定になっているか</label>
+      <input id='checkbox4' type='checkbox' name='checkbox4'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox5'>デバイスのセグメントは設定されているか</label>
+      <input id='checkbox5' type='checkbox' name='checkbox5'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox6'>新規ユーザーのみ対象になっているか</label>
+      <input id='checkbox6' type='checkbox' name='checkbox6'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox7'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
+      <input id='checkbox7' type='checkbox' name='checkbox7'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox8'>クエリパラメータを指定するABの場合、セグメント別設定のところで設定しているか</label>
+      <input id='checkbox8' type='checkbox' name='checkbox8'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox9'>バリエーションの変更部分に不要なものが紛れていないか（JavaScript、CSS）</label>
+      <input id='checkbox9' type='checkbox' name='checkbox9'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox10'>バリエーションの名前は変更されているか</label>
+      <input id='checkbox10' type='checkbox' name='checkbox10'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox11'>ゴールの設定は正しいか</label>
+      <input id='checkbox11' type='checkbox' name='checkbox11'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox12'>ゴールの設定に入れたURLのページにVWOタグは入っているか</label>
+      <input id='checkbox12' type='checkbox' name='checkbox12'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox13'>スケジューリングの設定は正しくされているか</label>
+      <input id='checkbox13' type='checkbox' name='checkbox13'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox14'>ラベルは付いているか（後から検索するのに便利なので確認）</label>
+      <input id='checkbox14' type='checkbox' name='checkbox14'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox15'>プレビューで実際のページを確認</label>
+      <input id='checkbox15' type='checkbox' name='checkbox15'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox16'>出現確率が新規100%のままになっていないか</label>
+      <input id='checkbox16' type='checkbox' name='checkbox16'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox17'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
+      <input id='checkbox17' type='checkbox' name='checkbox17'/>
+    </li>
+    <li class='check-list-item'>
+      <label for='checkbox18'>テストにあわせて同期非同期タグ正しいものが入っているか</label>
+      <input id='checkbox18' type='checkbox' name='checkbox18'/>
+    </li>
+  </ul>
 </body>
 </html>
