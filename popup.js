@@ -17,8 +17,13 @@ $(function() {
   function getStorageData() {
     for(var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
-      if(key.match('vwoCheck'))
-      console.log(key);
+      if(key.match('vwoCheck')) {
+        var index = key.split('-');
+        var id = '#checkbox' + index[1];
+        console.log(id);
+        var boolean = localStorage.getItem(key);
+        $(id).attr('checked', boolean);
+      }
       // if(key.match(/check/)) {
       //   console.log('hoge');
       // }
