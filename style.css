@@ -85,3 +85,7 @@ input[type=checkbox] {
   color: #001650;
   cursor: pointer;
 }
+
+.btn:hover {
+  opacity: .7;
+}
