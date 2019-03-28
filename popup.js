@@ -4,6 +4,14 @@ $(function() {
   var $btn = $('#js-btn-clear');
   var ids = [];
 
+  // チェックした項目の数をカウントする
+  function countChecked() {
+    var checkCount = $('input:checkbox:checked').length
+    $('#js-check-count').html(checkCount);
+  }
+
+  // 全ての項目がチェックされた時　success failed
+
   // listの数
   var listCount = $('.check-list > li').length;
   $('#js-list-count').html(listCount)
@@ -12,8 +20,14 @@ $(function() {
   $('input').on('click', function() {
     var check = $(this).prop('checked');
     var index = $('input').index(this);
-    localStorage.setItem('vwoCheck-' + index, check);
-  })
+    if (check) {
+      localStorage.setItem('vwoCheck-' + index, check);
+    } else {
+      localStorage.removeItem('vwoCheck-' + index);
+    }
+
+    countChecked();
+  });
 
   // クリアボタンを押した時
   $btn.on('click', clearData);
@@ -40,5 +54,5 @@ $(function() {
   }
 
   getStorageData();
-  console.log(ids);
+  countChecked();
 });
