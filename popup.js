@@ -3,17 +3,26 @@ $(function() {
 
   var $btn = $('#js-btn-clear');
   var ids = [];
+  var listCount = 0;
+  var checkCount = 0;
 
   // チェックした項目の数をカウントする
   function countChecked() {
-    var checkCount = $('input:checkbox:checked').length
+    checkCount = $('input:checkbox:checked').length
     $('#js-check-count').html(checkCount);
   }
 
   // 全ての項目がチェックされた時　success failed
+  function changeStatus() {
+    if (listCount === checkCount) {
+      $('.heading-icon-status').attr('src', 'images/icon_success.png');
+    } else {
+      $('.heading-icon-status').attr('src', 'images/icon_warning.png');
+    }
+  }
 
   // listの数
-  var listCount = $('.check-list > li').length;
+  listCount = $('.check-list > li').length;
   $('#js-list-count').html(listCount)
 
   // チェックボックスをクリックした時
@@ -27,6 +36,7 @@ $(function() {
     }
 
     countChecked();
+    changeStatus();
   });
 
   // クリアボタンを押した時
@@ -51,8 +61,10 @@ $(function() {
     for (var i = 0; i < ids.length; i++) {
       $(ids[i]).attr('checked', false);
     }
+    changeStatus();
   }
 
   getStorageData();
   countChecked();
+  changeStatus();
 });
