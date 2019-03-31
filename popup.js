@@ -12,6 +12,14 @@ $(function() {
     $('#js-check-count').html(checkCount);
   }
 
+  function addCheckClass(selector)  {
+    $('#' + selector).parent('.check-list-item').addClass('is-checked');
+  }
+
+  function removeCheckClass(selector)  {
+    $('#' + selector).parent('.check-list-item').removeClass('is-checked');
+  }
+
   // 全ての項目がチェックされた時　success failed
   function changeStatus() {
     if (listCount === checkCount) {
@@ -29,10 +37,13 @@ $(function() {
   $('input').on('click', function() {
     var check = $(this).prop('checked');
     var index = $('input').index(this);
+    var id = $(this).id;
     if (check) {
       localStorage.setItem('vwoCheck-' + index, check);
+      //addCheckClass();
     } else {
       localStorage.removeItem('vwoCheck-' + index);
+      //removeCheckClass();
     }
 
     countChecked();

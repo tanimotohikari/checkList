@@ -142,7 +142,6 @@ input[type=checkbox] {
 }
 
 .checkbox:before {
-  -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
   position: absolute;
   top: 50%;
@@ -155,14 +154,11 @@ input[type=checkbox] {
   border-bottom: 2px solid #fff;
   content: '';
   opacity: 0;
-  -webkit-transform: rotate(35deg);
-  -ms-transform: rotate(35deg);
   transform: rotate(35deg);
   z-index: 5;
 }
 
 .checkbox:after {
-  -webkit-transition: border-color 0.2s linear;
   transition: border-color 0.2s linear;
   position: absolute;
   top: 50%;
@@ -183,3 +179,10 @@ input[type=checkbox]:checked + .checkbox:before {
 input[type=checkbox]:checked + .checkbox:after {
   background-color: #001650;
 }
+
+.is-checked {
+  text-decoration: line-through;
+  color: #d6d6d6;
+}
+
+/*チェックした時文字に取り消し線をつける*/
