@@ -13,11 +13,13 @@ $(function() {
   }
 
   function addCheckClass(selector)  {
-    $('#' + selector).parent('.check-list-item').addClass('is-checked');
+    var selector = '#' + selector;
+    $(selector).parents('.check-list-item').find('label').addClass('is-checked');
   }
 
   function removeCheckClass(selector)  {
-    $('#' + selector).parent('.check-list-item').removeClass('is-checked');
+    var selector = '#' + selector;
+    $(selector).parents('.check-list-item').find('label').removeClass('is-checked');
   }
 
   // 全ての項目がチェックされた時　success failed
@@ -37,13 +39,15 @@ $(function() {
   $('input').on('click', function() {
     var check = $(this).prop('checked');
     var index = $('input').index(this);
-    var id = $(this).id;
+    var id = this.id;
     if (check) {
       localStorage.setItem('vwoCheck-' + index, check);
-      //addCheckClass();
+      addCheckClass(id);
+      console.log(check);
     } else {
       localStorage.removeItem('vwoCheck-' + index);
-      //removeCheckClass();
+      removeCheckClass(id);
+      console.log(check);
     }
 
     countChecked();
