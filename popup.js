@@ -70,10 +70,9 @@ $(function() {
 
   function clearData() {
     localStorage.clear();
-    alert('チェックされたデータはクリアされました')
-    for (var i = 0; i < ids.length; i++) {
-      $(ids[i]).prop('checked', false);
-    }
+    alert('チェックされたデータはクリアされました');
+    $('input').prop('checked', false);
+    $('label').removeClass('is-checked');
     changeStatus();
   }
 
