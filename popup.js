@@ -72,7 +72,7 @@ $(function() {
     localStorage.clear();
     alert('チェックされたデータはクリアされました')
     for (var i = 0; i < ids.length; i++) {
-      $(ids[i]).attr('checked', false);
+      $(ids[i]).prop('checked', false);
     }
     changeStatus();
   }
