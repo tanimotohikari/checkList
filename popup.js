@@ -5,6 +5,19 @@ $(function() {
   var ids = [];
   var listCount = 0;
   var checkCount = 0;
+  var $listItem = $('.content-list li');
+  var $vwo = $('#js-vwoList-show');
+  var $back = $('#js-back-menu');
+  var currentList = '';
+
+
+  // クリックに関する処理
+  // クリアボタン
+  $btn.on('click', clearData);
+  $back.on('click', backMenu);
+
+  // チェックリストの選択
+  $listItem.on('click', showVwoList);
 
   // チェックした項目の数をカウントする
   function countChecked() {
@@ -52,9 +65,6 @@ $(function() {
     changeStatus();
   });
 
-  // クリアボタンを押した時
-  $btn.on('click', clearData);
-
   function getStorageData() {
     for(var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
@@ -74,6 +84,24 @@ $(function() {
     $('input').prop('checked', false);
     $('label').removeClass('is-checked');
     changeStatus();
+  }
+
+  // vwoのチェックリストがスライドイン
+  function showVwoList() {
+    var id = $(this)[0].id
+    var selector = id.split('-');
+    selector = selector[1];
+    currentList = `#${ selector }`;
+    $back.removeClass('is-hide');
+    $listItem.fadeOut();
+    $(currentList).addClass('is-move-left');
+  }
+
+  // チェックリスト選択メニューに戻る
+  function backMenu() {
+    $back.addClass('is-hide');
+    $listItem.fadeIn();
+    $(currentList).removeClass('is-move-left');
   }
 
   getStorageData();
