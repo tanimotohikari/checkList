@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 @import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
 
+/* ---------------------
+  base
+ --------------------- */
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -10,10 +14,20 @@ body, p {
   padding: 0;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 input[type=checkbox] {
   margin: 0;
   display: none;
 }
+
+/* ---------------------
+  heading
+ --------------------- */
 
 .heading {
   position: fixed;
@@ -70,11 +84,40 @@ input[type=checkbox] {
   font-weight: 100;
 }
 
-.check-list {
+/* ---------------------
+  content
+ --------------------- */
+
+.content {
   width: 400px;
+  height: 400px;
   padding: 0;
   margin: 51px 0 0;
-  list-style: none;
+}
+
+.content-list li {
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.content-list li:hover {
+  color: #d6d6d6;
+}
+
+/* ---------------------
+  check-list
+ --------------------- */
+
+.check-list {
+  width: 400px;
+  height: 400px;
+  padding: 0;
+  position: absolute;
+  top: 51px;
+  left: 400px;
+  overflow: scroll;
 }
 
 .check-list li {
@@ -108,6 +151,10 @@ input[type=checkbox] {
   width: 100%;
 }
 
+/* ---------------------
+  btn
+ --------------------- */
+
 .btn {
   display: inline-block;
   padding: 2px 5px;
@@ -126,6 +173,20 @@ input[type=checkbox] {
 .btn:hover {
   opacity: .7;
 }
+
+.btn-back {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #001650;
+}
+
+/* ---------------------
+  checkbox
+ --------------------- */
 
 .checkbox {
   width: 100%;
@@ -180,9 +241,48 @@ input[type=checkbox]:checked + .checkbox:after {
   background-color: #001650;
 }
 
+/* ---------------------
+  utility
+ --------------------- */
+
 .is-checked {
   text-decoration: line-through;
   color: #d6d6d6;
 }
 
-/*チェックした時文字に取り消し線をつける*/
+.is-hide {
+  display: none !important;
+}
+
+.is-move-left {
+  display: block;
+  animation-name: slidIn;
+  animation-duration: .5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.is-move-right {
+  display: block;
+  animation-name: slidIn;
+  animation-duration: .5s;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* ---------------------
+  アニメーション
+ --------------------- */
+
+@keyframes slidIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(-400px);
+  }
+}
